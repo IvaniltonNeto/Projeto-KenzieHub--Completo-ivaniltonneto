@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Container } from "./styles";
+import { toast } from "react-toastify";
 import { IoMdClose } from "react-icons/io";
-import { ButtonPrimary, Input } from "../../styles/Global";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+
+import { ButtonPrimary, Input } from "../../styles/Global";
+import { Container } from "./styles";
 import api from "../../Services/api";
-import { toast } from "react-toastify";
 
 const ModalAddSkill = ({ setModalTech }) => {
   const [showModules, setShowModules] = useState(false);
@@ -27,7 +28,7 @@ const ModalAddSkill = ({ setModalTech }) => {
   }
 
   const schema = yup.object().shape({
-    title: yup.string().required("Insira o nome da tecnologia"),
+    title: yup.string().required("Insira o nome da tarefa"),
   });
   const {
     register,
@@ -44,7 +45,7 @@ const ModalAddSkill = ({ setModalTech }) => {
         },
       })
       .then((response) => {
-        toast.success("Tecnologia adicionada com sucesso");
+        toast.success("Tarefa adicionada com sucesso");
         setShowModules(false);
       })
       .catch((error) => {
@@ -60,7 +61,7 @@ const ModalAddSkill = ({ setModalTech }) => {
     <Container>
       <section>
         <div>
-          <h2>Cadastrar Tecnologia</h2>
+          <h2>Cadastrar Tarefa</h2>
 
           <button onClick={handleCloseModal}>
             <IoMdClose />
@@ -69,7 +70,7 @@ const ModalAddSkill = ({ setModalTech }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>
             Nome
-            <Input {...register("title")} placeholder="Nome da Tecnologia" />
+            <Input {...register("title")} placeholder="Nome da tarefa" />
             <span>{errors.title?.message}</span>
           </label>
           <label>
@@ -95,7 +96,7 @@ const ModalAddSkill = ({ setModalTech }) => {
               )}
             </ul>
           </label>
-          <ButtonPrimary type="submit">Cadastrar Tecnologia</ButtonPrimary>
+          <ButtonPrimary type="submit">Cadastrar Tarefa</ButtonPrimary>
         </form>
       </section>
     </Container>

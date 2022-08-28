@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Container } from "./styles";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout, setUser } from "../../store/modules/user/actions";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
+
+import { logout, setUser } from "../../store/modules/user/actions";
+import { Container } from "./styles";
 import ContainerSkills from "../../components/ContainerSkills";
 import ModalAddSkill from "../../components/ModalAddSkill";
 import api from "../../Services/api";
@@ -63,7 +64,7 @@ const Home = () => {
           {modalTech && <ModalAddSkill setModalTech={setModalTech} />}
           <header className="headerHome">
             <div>
-              <h1>Kenzie Hub</h1>
+              <h1>Hero's to-do</h1>
               <button className="btnLogout" onClick={handleLogout}>
                 Sair
               </button>
@@ -71,13 +72,13 @@ const Home = () => {
           </header>
           <section className="containerUser">
             <div>
-              <h2>Olá, {user.name}</h2>
-              <p>{user.course_module}</p>
+              <h2>Olá Super, {user.name}</h2>
+              <p>Especialista nível: {user.course_module}</p>
             </div>
           </section>
           <main>
             <header>
-              <h3>Tecnologias</h3>
+              <h3>Tarefas</h3>
               <button className="btnAdd" onClick={handleAddSkill}>
                 <GoPlus />
               </button>

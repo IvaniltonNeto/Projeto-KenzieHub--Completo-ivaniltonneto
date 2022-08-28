@@ -13,7 +13,7 @@ export const Container = styled.div`
   h1 {
     font-weight: 700;
     font-size: 16px;
-    color: var(--primary);
+    color: var(--gray0);
   }
   h2 {
     font-weight: 700;
