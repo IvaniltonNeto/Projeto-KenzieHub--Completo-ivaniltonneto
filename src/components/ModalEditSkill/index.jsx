@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./styles";
 import { IoMdClose } from "react-icons/io";
-import { ButtonPrimary, ButtonSecondary, Input } from "../../styles/Global";
-import { FaAngleUp, FaAngleDown } from "react-icons/fa";
-import api from "../../Services/api";
 import { toast } from "react-toastify";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+
+import { ButtonPrimary, ButtonSecondary, Input } from "../../styles/Global";
+import api from "../../Services/api";
+import { Container } from "./styles";
 
 const ModalEditSkill = ({ setModalEditSkill, tech }) => {
   const [showModules, setShowModules] = useState(false);
@@ -58,11 +59,11 @@ const ModalEditSkill = ({ setModalEditSkill, tech }) => {
         },
       })
       .then((response) => {
-        toast.success("Tecnologia removira com sucesso");
+        toast.success("Tarefa erradicada com sucesso");
         setShowModules(false);
       })
       .catch((error) => {
-        toast.error("Erro ao apagar tecnologia");
+        toast.error("Erro ao erradicar tarefa");
       });
 
     setTimeout(() => {
@@ -104,6 +105,7 @@ const ModalEditSkill = ({ setModalEditSkill, tech }) => {
                   <li onClick={handleSelectModule}>Superman</li>
                   <li onClick={handleSelectModule}>Batman</li>
                   <li onClick={handleSelectModule}>+ de 8000</li>
+                  <li onClick={handleSelectModule}>Concluido</li>
                 </div>
               )}
             </ul>
@@ -117,7 +119,7 @@ const ModalEditSkill = ({ setModalEditSkill, tech }) => {
               className="btnDelete"
               onClick={handleDelete}
             >
-              Excluir 
+              Excluir
             </ButtonSecondary>
           </div>
         </form>

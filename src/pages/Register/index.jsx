@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./styles";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { ButtonPrimary, Input } from "../../styles/Global";
 import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+
+import { ButtonPrimary, Input } from "../../styles/Global";
+import { Container } from "./styles";
 import api from "../../Services/api";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [currentModule, setCurrentModule] = useState("M1");
+  const [currentModule, setCurrentModule] = useState("Aquaman");
   const [showModules, setShowModules] = useState(false);
   const [buttonTogle, setButtonTogle] = useState(true);
   const history = useHistory();
@@ -85,13 +86,13 @@ const Register = () => {
     api
       .post("/users", data)
       .then((response) => {
-        toast.success("Usuario cadastrado com sucesso");
+        toast.success("Bem vindo a liga!");
         setTimeout(() => {
           history.push("/");
         });
       })
       .catch((error) => {
-        toast.error("Verifique todos os campos");
+        toast.error("Ops! preencha todos os campos pequeno Lex!");
       });
   };
 
@@ -108,7 +109,7 @@ const Register = () => {
   return (
     <Container>
       <div className="headerRegister">
-        <h1>Kenzie Hub</h1>
+        <h1>Hero's to-do</h1>
         <button className="btnBack" onClick={() => history.goBack()}>
           {" "}
           {/* levará de volta ao histórico do navegador antes*/}
@@ -118,7 +119,7 @@ const Register = () => {
       <div className="containerRegister">
         <div className="topRegister">
           <h2>Crie sua Conta</h2>
-          <p>Rapido e grátis, vamos nessa</p>
+          <p>Rapido como o flash, vamos nessa</p>
         </div>
         <form onSubmit={handleSubmit(signUp)} onChange={handleChange}>
           <label>
@@ -189,7 +190,7 @@ const Register = () => {
             <span>{errors.contact?.message}</span>
           </label>
           <label>
-            Selecionar módulo
+            Selecione seu nível de foco
             <ul>
               <li className="selectModule">
                 {currentModule}
@@ -201,12 +202,12 @@ const Register = () => {
               </li>
               {showModules && (
                 <div className="modules">
-                  <li onClick={handleSelectModule}>M1</li>
-                  <li onClick={handleSelectModule}>M2</li>
-                  <li onClick={handleSelectModule}>M3</li>
-                  <li onClick={handleSelectModule}>M4</li>
-                  <li onClick={handleSelectModule}>M5</li>
-                  <li onClick={handleSelectModule}>M6</li>
+                  <li onClick={handleSelectModule}>Aquaman</li>
+                  <li onClick={handleSelectModule}>Flash</li>
+                  <li onClick={handleSelectModule}>Mulher Maravilha</li>
+                  <li onClick={handleSelectModule}>Superman</li>
+                  <li onClick={handleSelectModule}>Batman</li>
+                  <li onClick={handleSelectModule}>+ de 8000</li>
                 </div>
               )}
             </ul>

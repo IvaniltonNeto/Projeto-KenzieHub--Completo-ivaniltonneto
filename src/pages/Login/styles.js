@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div`  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   h1 {
     font-weight: 700;
     font-size: 14px;
-    color: var(--primary);
+    color: var(--gray0);
     margin-bottom: 20px;
   }
   h2 {

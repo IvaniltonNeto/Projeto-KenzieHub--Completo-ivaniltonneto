@@ -1,11 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
+import background_1 from '../asserts/img/background_1.jpg'
 
 const Global = createGlobalStyle`
 
 #root{
---primary: #ff577f;
---primary-focus: #ff427f;
---primary-negative: #59323f;
+--primary: #1E90FF;
+--primary-focus: #4169E1;
+--primary-negative: #6495ED;
 --gray0: #f8f9fa;
 --gray1: #868e96;
 --gray2: #343841;
@@ -15,7 +16,6 @@ const Global = createGlobalStyle`
 --toastify-color-success: #3fe864;
 --toastify-color-error: #e83f58;
 --toastify-text-color-light: #f8f9fa;
-
 
 }
 .Toastify__close-button--light{
@@ -45,11 +45,9 @@ html{
     width: 100vw;
     height: 100vh;
 }
-body{
-  
+body{  
     font-family: 'Inter';
-    background: #121214;
-    
+    background-image: url(${background_1});
 }
 `;
 
@@ -105,7 +103,7 @@ export const Input = styled.input`
   width: ${({ width }) => width || "100%"};
   border: none;
   padding: 0 14px;
-
+    
   &:focus {
     border: 0.9772px solid var(--gray0);
   }

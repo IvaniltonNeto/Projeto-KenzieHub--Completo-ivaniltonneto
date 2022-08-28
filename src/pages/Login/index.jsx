@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { ButtonPrimary, ButtonSecondary, Input } from "../../styles/Global";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { Container } from "./styles";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
-import api from "../../Services/api";
 import { toast } from "react-toastify";
+
+import { Container } from "./styles";
+import api from "../../Services/api";
+import { ButtonPrimary, ButtonSecondary, Input } from "../../styles/Global";
 import { setUser } from "../../store/modules/user/actions";
-import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -64,7 +65,7 @@ const Login = () => {
           setTimeout(() => history.push(`/home/${user}`), 2500);
         })
         .catch((error) => {
-          toast.error("Ops! Email ou senha incorretos");
+          toast.error("Ops! Email ou senha incorretos jovem Lex!");
         });
     } else {
       toast.info("Você já fez o login xD");
@@ -77,7 +78,7 @@ const Login = () => {
 
   return (
     <Container>
-      <h1>Kenzie Hub</h1>
+      <h1>Hero's to-do</h1>
       <div className="containerLogin">
         <h2>Login</h2>
         <form onSubmit={handleSubmit(signUp)}>

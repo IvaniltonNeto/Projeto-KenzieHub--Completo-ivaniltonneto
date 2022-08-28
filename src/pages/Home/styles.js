@@ -6,7 +6,7 @@ export const Container = styled.div`
   h1 {
     font-weight: 700;
     font-size: 16px;
-    color: var(--primary);
+    color: var(--gray0);
   }
   h3 {
     font-weight: 600;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
   .containerUser {
     width: 100%;
-    border-bottom: 1px solid var(--gray3);
+    border-bottom: 1px solid var(--gray0);
     padding: 30px 0;
   }
   .containerUser h2 {
@@ -24,10 +24,10 @@ export const Container = styled.div`
     line-height: 28px;
   }
   .containerUser p {
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 22px;
-    color: var(--gray1);
+    color: var(--gray0);
   }
   .containerUser div {
     width: 95%;
@@ -35,7 +35,7 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 10px;
     margin: 0 auto;
-    max-width: 780px;
+    max-width: 1200px;
   }
   .btnLogout {
     background: #212529;
@@ -54,7 +54,7 @@ export const Container = styled.div`
   .headerHome {
     width: 100%;
     padding: 20px 0;
-    border-bottom: 1px solid var(--gray3);
+    border-bottom: 1px solid var(--gray0);
   }
   .headerHome div {
     width: 95%;
@@ -62,10 +62,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 780px;
+    max-width: 1200px;
   }
   main {
-    max-width: 780px;
+    max-width: 1000px;
     margin: 0 auto;
   }
   main header {

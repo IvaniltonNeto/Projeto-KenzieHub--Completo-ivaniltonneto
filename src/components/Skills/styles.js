@@ -9,6 +9,7 @@ export const Container = styled.li`
   gap: 12.18px;
   width: 95%;
   height: 48px;
+  border: 2px solid;
   border-radius: 4px;
   background: var(--gray4);
   cursor: pointer;
@@ -24,12 +25,12 @@ export const Container = styled.li`
   p {
     font-weight: 400;
     font-size: 12.182px;
-    line-height: 22px;
+    line-height: 22px;    
     color: var(--gray1);
   }
   div {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100%;    
   }
 `;
