@@ -41,7 +41,7 @@ const Home = () => {
     if (!user) {
       dispatch(setUser(JSON.parse(userLoggedIn)));
     }
-  }, [user]);
+  }, [user, history, dispatch, isLogged, userLoggedIn]);
 
   function handleAddSkill() {
     setModalTech(!modalTech);
@@ -72,7 +72,7 @@ const Home = () => {
           </header>
           <section className="containerUser">
             <div>
-              <h2>Olá Super, {user.name}</h2>
+              <h2>Olá, Super {user.name}</h2>
               <p>Especialista nível: {user.course_module}</p>
             </div>
           </section>

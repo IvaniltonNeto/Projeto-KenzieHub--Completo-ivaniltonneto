@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-bottom: 20px;
 
   h1 {
-    font-weight: 700;
+    font-weight: 700;    
     font-size: 16px;
     color: var(--gray0);
   }

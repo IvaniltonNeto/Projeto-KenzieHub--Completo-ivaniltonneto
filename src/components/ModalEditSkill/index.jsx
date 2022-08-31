@@ -13,7 +13,7 @@ const ModalEditSkill = ({ setModalEditSkill, tech }) => {
 
   useEffect(() => {
     setCurrentModule(tech.status);
-  }, []);
+  }, [tech.status]);
 
   function handleShowModules() {
     setShowModules(!showModules);
@@ -39,7 +39,7 @@ const ModalEditSkill = ({ setModalEditSkill, tech }) => {
         },
       })
       .then((response) => {
-        toast.success("Tecnologia atualizada com sucesso");
+        toast.success("Tarefa atualizada com sucesso");
         setShowModules(false);
       })
       .catch((error) => {

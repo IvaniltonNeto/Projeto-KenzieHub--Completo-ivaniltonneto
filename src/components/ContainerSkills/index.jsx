@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "./styles";
 import Skills from "../../components/Skills";
 
-const ContainerSkills = ({ techs, setTechs }) => {
+const ContainerSkills = ({ techs, setTechs }) =>{
   return (
     <Container>
       {techs.length > 0 ? (
@@ -13,7 +13,7 @@ const ContainerSkills = ({ techs, setTechs }) => {
       ) : (
         <div className="containerNoTechs">
           <h2>O tambor faz muito barulho mas é vazio por dentro.</h2>
-          <p>Não seja como o tambor, adicione alguma tecnologia</p>
+          <p>Não seja como o tambor, adicione alguma tarefa</p>
         </div>
       )}
     </Container>
